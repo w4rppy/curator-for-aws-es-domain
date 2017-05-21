@@ -1,0 +1,1 @@
+# curator-for-aws-es-domain
