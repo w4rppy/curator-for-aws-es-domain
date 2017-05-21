@@ -39,17 +39,11 @@ def search_old_indices(creation_times, list_indices, remove_elements):
             check_time = current_time - offset
             if check_time > int(creation_times[j]) and (list_indices[j][:len(list_days_boundary_by_indice[i][TUPLE_NAME])] == list_days_boundary_by_indice[i][TUPLE_NAME]):
                 remove_elements.append(j)
-                ## TO PUSH SOMEWHERE
-                print "DEBUG custom bound"
-                print list_indices[j]
             else:
                 offset = (1000 * 60 * 60 * 24 * DEFAULT_DAYS_BOUNDARY)
                 check_time = current_time - offset
                 if check_time > int(creation_times[j]):
                     remove_elements.append(j)
-                    ## TO PUSH SOMEWHERE
-                    print "DEBUG default bound"
-                    print list_indices[j]
     return list(set(sorted(remove_elements)))
 
 def get_creation_time_indices(es_endpoint, list_indices, creation_times):
